@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+/* Um urso chegou a uma Floresta e se escondeu atrás de uma das 100 árvores
+existentes, quando em determinado momento viu um caçador. O caçador só Anha 5 balas em
+sua espingarda. Cada vez que ele aArava, e não acertava, o urso dizia: estou mais à direita ou
+mais à esquerda.
+Caso o caçador não consiga acertar o urso, ele será imediatamente levado para Polo Norte.
+Desenvolva um código na linguagem de programação C, para implementar este jogo. Ele
+deve ser jogado por dois jogadores, onde um escolhe a árvore em que o urso irá se esconder, e o
+outro tenta acertar.*/
 void main(){
     int tpos; // tree position
     int spos; // shot position

@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/*Desenvolva um código na linguagem de programação C que simule uma calculadora,
+que realiza as quatro operações matemáAcas básicas: soma, subtração, divisão e mulAplicação.
+Ao escolher uma das opções, o programa solicita dois números para que a opção escolhida seja
+executada e o resultado da operação deve ser exibido na tela. Em seguida, o menu deve ser
+exibido novamente para que o usuário escolha outra opção.
+O programa deve ficar executando até que o usuário escolha a opção 5. Nesse caso o programa
+deve finalizar. Caso o usuário escolha uma opção diferente das exibidas, o sistema deve emiAr uma mensagem: “Opção inválida!”.*/
 
 int main(){
     float n1,n2,result;
@@ -12,7 +18,7 @@ int main(){
             exit(0); // senão ele faz a operação mesmo assim e inventa um valor de resultado antes de reagir como deveria
         }
         if(op > 5){
-            printf("\n\nEscolha uma opção de 1 a 5\n");
+            printf("\n\nOpção Inválida! Escolha uma opção de 1 a 5\n");
             continue;
         }
         printf("Selecione o primeiro numero:");

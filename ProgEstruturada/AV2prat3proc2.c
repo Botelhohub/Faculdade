@@ -1,6 +1,23 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+/*Desenvolva um código que exiba um menu com as seguintes
+informações abaixo:
+1. Qual o seu clube de futebol de preferência (1–Flamengo, 2–Vasco, 3–Fluminense, 4–
+Botafogo, 5–Outros);
+2. Qual o seu salário;
+3. Qual a sua cidade natal (1 – Niterói, 2 – Outra).
+Para finalizar a entrevista o usuário deve digitar o valor 0 (zero).
+Caso o usuário escolha uma opção diferente das exibidas, o sistema deve emiAr uma mensagem:
+“Opção inválida!”.
+Escreva um programa que colete os dados de acordo com a opção escolhida pelo usuário e
+informe:
+• O número de torcedores por clube;
+• A média salarial dos torcedores de cada Ame;
+• O número de pessoas nascidas em Niterói e que não torcem para nenhum dos
+principais clubes do Rio;
+• O número de pessoas entrevistadas.*/
+
 int main(){
 
 float slfla=0.0,slva=0.0,slflu=0.0,slbo=0.0,slout=0.0,salario;
