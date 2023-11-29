@@ -41,13 +41,13 @@ int main()
 	int times[5] = {0, 0, 0, 0, 0}; //vetor index dos times no vetor: 0 - Fla, 1 - Vas, 2 - Flu, 3 - Bot, 4 - outros
 	float salarioTim[5] = {0, 0, 0, 0, 0}; //mesmo index dos times[]
 	int n = 0; //contador
-	int nTorce = 0; // morador de niteroi qu não torce pros maiores times
 	printf("\nBem vindo ao programa de pesquisa\n");
 	do
 	{
 		int idTime;
 		int input;
 		float salario;
+		int nTorce = 0; // morador de niteroi qu não torce pros maiores times
 		n++;
 		printf("Selecione o time de futebol para qual você torce?\n");
 		printf("1 - Flamengo\n2 - Vasco\n3 - Fluminense\n4 - Botafogo\n5 - Outro Time\nSelecione: "); //não confundir o numero aqui com o ID do time no times[]
