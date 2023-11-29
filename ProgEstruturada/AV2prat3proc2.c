@@ -21,7 +21,7 @@ principais clubes do Rio;
 • O número de pessoas entrevistadas.*/
 void exibirresultado(int n, int times[], float totalTime[], int ntorce)
 {
-	char nomesT[5][10] = {"Flamengo", "Vasco", "Fluminense", "Botafogo", "Outro Time"};
+	char nomesT[5][20] = {"Flamengo", "Vasco", "Fluminense", "Botafogo", "Outro Time"};
 	printf("\n-- Resultados da Pesquisa --\nNúmero de entrevistados: %d\nNumero de torcedores dos principais times: ", n);
 	for (int i = 0; i < 5 ; i++)
 	{
@@ -41,7 +41,7 @@ int main()
 	int times[5] = {0, 0, 0, 0, 0}; //vetor index dos times no vetor: 0 - Fla, 1 - Vas, 2 - Flu, 3 - Bot, 4 - outros
 	float salarioTim[5] = {0, 0, 0, 0, 0}; //mesmo index dos times[]
 	int n = 0; //contador
-	int nTorce = 0;
+	int nTorce = 0; // morador de niteroi qu não torce pros maiores times
 	printf("\nBem vindo ao programa de pesquisa\n");
 	do
 	{
@@ -66,14 +66,11 @@ int main()
 		printf("Em que região você mora?\n1 - Niteroi\n2 - Outra\nSelecione: ");
 		cid:
 		scanf("%d", &input);
-		if (input <= 2 && input > 0) //primeiro if checa o input, o segundo verifica qual foi o input
+		if (input == 1 && idTime == 4)
 		{
-			if (input == 2 && idTime == 4)
-			{
-				nTorce++;
-			}
+			nTorce++;
 		}
-		else
+		else if (input > 2 && input < 1)
 		{
 			printf("Opção inválida! Selecione 1 ou 2: ");
 			goto cid;
@@ -95,4 +92,3 @@ int main()
 	} while (n >= 0);
 	return -1; //se ene ficar negativo por algum motivo, o programa quebrou.
 }
-

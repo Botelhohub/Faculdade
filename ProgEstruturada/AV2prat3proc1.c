@@ -11,10 +11,11 @@ deve finalizar. Caso o usuário escolha uma opção diferente das exibidas, o si
 
 // atenção: o teclado de input deve ser restringido a números!.
 int main(){
+    float n1, n2, result;
+    int op;
+    printf("Calculadora básica v1.0\n");
     do
     {
-        float n1, n2, result;
-        int op;
         printf("\nSelecione o primeiro numero: ");
         scanf("%f",&n1);
         printf("\nSelecione o segundo numero: ");
@@ -40,6 +41,6 @@ int main(){
                 goto op;
         }
         printf(">>> O resultado da operação é: %.1f\n",result);
-    } while(1);
+    } while(op != 0);
     return 0;
 }
