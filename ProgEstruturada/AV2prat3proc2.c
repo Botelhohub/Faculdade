@@ -1,16 +1,11 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<ctype.h>
-
-
-/*Desenvolva um código que exiba um menu com as seguintes
+/*PROBLEMA: Desenvolva um código que exiba um menu com as seguintes
 informações abaixo:
 1. Qual o seu clube de futebol de preferência (1–Flamengo, 2–Vasco, 3–Fluminense, 4–
 Botafogo, 5–Outros);
 2. Qual o seu salário;
 3. Qual a sua cidade natal (1 – Niterói, 2 – Outra).
 Para finalizar a entrevista o usuário deve digitar o valor 0 (zero).
-Caso o usuário escolha uma opção diferente das exibidas, o sistema deve emiAr uma mensagem:
+Caso o usuário escolha uma opção diferente das exibidas, o sistema deve emitir uma mensagem:
 “Opção inválida!”.
 Escreva um programa que colete os dados de acordo com a opção escolhida pelo usuário e
 informe:
@@ -19,27 +14,17 @@ informe:
 • O número de pessoas nascidas em Niterói e que não torcem para nenhum dos
 principais clubes do Rio;
 • O número de pessoas entrevistadas.*/
-void exibirresultado(int n, int times[], float totalTime[], int ntorce)
-{
-	char nomesT[5][20] = {"Flamengo", "Vasco", "Fluminense", "Botafogo", "Outro Time"};
-	printf("\n-- Resultados da Pesquisa --\nNúmero de entrevistados: %d\nNumero de torcedores dos principais times: ", n);
-	for (int i = 0; i < 5 ; i++)
-	{
-		printf("%s: %d ", nomesT[i], times[i]);
-	}
-	printf("\nSalário Médio entre os torcedores do times:\n");
-	for (int i = 0; i < 5; i++)
-	{
-		float m = totalTime[i] / times[i];
-		printf("%s: R$ %.2f ",nomesT[i], m);
-	}
-	printf("\nMoradores de Nireroi que não torcem para nenhum dos principais times do RJ: %d", ntorce);
-}
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+void exibirresultado(int n, int times[], float totalTime[], int ntorce);
 
 int main()
 {
-	int times[5] = {0, 0, 0, 0, 0}; //vetor index dos times no vetor: 0 - Fla, 1 - Vas, 2 - Flu, 3 - Bot, 4 - outros
-	float salarioTim[5] = {0, 0, 0, 0, 0}; //mesmo index dos times[]
+	int times[5] = {0, 0, 0, 0, 0}; //index dos times no vetor: 0 - Fla, 1 - Vas, 2 - Flu, 3 - Bot, 4 - outros
+	float salarioTim[5] = {0, 0, 0, 0, 0}; //mesmo index
 	int n = 0; //contador
 	printf("\nBem vindo ao programa de pesquisa\n");
 	do
@@ -84,11 +69,28 @@ int main()
 		{
 		case 0:
 			exibirresultado(n, times, salarioTim, nTorce);
+			printf("finalizando o programa...");
 			exit(0);
 			break;
 		default: printf("\nPróximo entrevistado...\n");
 			break;
 		}
 	} while (n >= 0);
-	return -1; //se ene ficar negativo por algum motivo, o programa quebrou.
+	return -1; //se n ficar negativo por algum motivo, o programa quebrou.
+}
+void exibirresultado(int n, int times[], float totalTime[], int ntorce)
+{
+	char nomesT[5][20] = {"Flamengo", "Vasco", "Fluminense", "Botafogo", "Outro Time"};
+	printf("\n-- Resultados da Pesquisa --\nNúmero de entrevistados: %d\nNumero de torcedores dos principais times:\n", n);
+	for (int i = 0; i < 5 ; i++)
+	{
+		printf("%s: %d ", nomesT[i], times[i]);
+	}
+	printf("\nSalário Médio entre os torcedores do times:\n");
+	for (int i = 0; i < 5; i++)
+	{
+		float m = totalTime[i] / times[i];
+		printf("%s: R$ %.2f ",nomesT[i], m);
+	}
+	printf("\nMoradores de Nireroi que não torcem para nenhum dos principais times do RJ: %d", ntorce);
 }
